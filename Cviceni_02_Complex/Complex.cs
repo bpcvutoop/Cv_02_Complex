@@ -8,11 +8,10 @@ namespace Cviceni_02_Complex
 {
     public class Complex
     {
-        double realna;
-        double imaginarni;
+        public double realna;
+        public double imaginarni;
 
-        double sranda = 0.0;
-
+        
 
         public Complex(double real = 0.0, double complex = 0.0)
         {
