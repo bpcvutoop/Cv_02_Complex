@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Cviceni_02_Complex
 {
-    class ComplexTest
+    public class ComplexTest
     {
         public static void test(string NazevTestu, Complex ocekavana, Complex skutecna)
         {
             Console.WriteLine(NazevTestu);
             var epsilon = 0.000001;
-            if ((Math.Abs(ocekavana.realna - skutecna.realna) < epsilon) && (Math.Abs(ocekavana.imaginarni - skutecna.imaginarni) < epsilon)
+            if ((Math.Abs(ocekavana.Realna - skutecna.Realna) < epsilon) && (Math.Abs(ocekavana.imaginarni - skutecna.imaginarni) < epsilon))
             {
                 Console.WriteLine("OK");
+                Console.WriteLine();
             }
             else
             {

@@ -8,43 +8,43 @@ namespace Cviceni_02_Complex
 {
     public class Complex
     {
-        public double realna;
+        public double Realna;
         public double imaginarni;
 
         
 
         public Complex(double real = 0.0, double complex = 0.0)
         {
-            this.realna = real;
+            this.Realna = real;
             this.imaginarni = complex;
 
         }
 
         public static Complex operator +(Complex x, Complex y)
         {
-            return new Complex(x.realna + y.realna, x.imaginarni + y.imaginarni);
+            return new Complex(x.Realna + y.Realna, x.imaginarni + y.imaginarni);
         }
 
         public static Complex operator -(Complex x, Complex y)
         {
-            return new Complex(x.realna - y.realna, x.imaginarni - y.imaginarni);
+            return new Complex(x.Realna - y.Realna, x.imaginarni - y.imaginarni);
         }
 
         public static Complex operator *(Complex x, Complex y)
         { //(ac - bd) + (ad + bc)i
             //                      (x1y1 - x2y2) + (x1y2 + x2y1)i
-            return new Complex(((x.realna * y.realna) - (x.imaginarni * y.imaginarni)), ((x.realna * y.imaginarni) + (x.imaginarni * y.realna)));
+            return new Complex(((x.Realna * y.Realna) - (x.imaginarni * y.imaginarni)), ((x.Realna * y.imaginarni) + (x.imaginarni * y.Realna)));
         }
 
         public static Complex operator /(Complex x, Complex y)
         { //(ac - bd) + (ad + bc)i
             //                      (x1y1 - x2y2) + (x1y2 + x2y1)i
-            return new Complex(((x.realna * x.realna + x.imaginarni * y.imaginarni) / (y.realna * y.realna + y.imaginarni * y.imaginarni)), (x.imaginarni * x.realna - x.realna * y.imaginarni) / (y.realna * y.realna + y.imaginarni * y.imaginarni));
+            return new Complex(((x.Realna * x.Realna + x.imaginarni * y.imaginarni) / (y.Realna * y.Realna + y.imaginarni * y.imaginarni)), (x.imaginarni * x.Realna - x.Realna * y.imaginarni) / (y.Realna * y.Realna + y.imaginarni * y.imaginarni));
         }
         
         public static bool operator ==(Complex x, Complex y)
         {
-            if ((x.realna == y.realna) && (x.imaginarni == y.imaginarni))
+            if ((x.Realna == y.Realna) && (x.imaginarni == y.imaginarni))
             {
                 return true;
             }
@@ -52,7 +52,7 @@ namespace Cviceni_02_Complex
         }
         public static bool operator !=(Complex x, Complex y)
         {
-            if ((x.realna != y.realna) || (x.imaginarni != y.imaginarni))
+            if ((x.Realna != y.Realna) || (x.imaginarni != y.imaginarni))
             {
                 return true;
             }
@@ -63,26 +63,27 @@ namespace Cviceni_02_Complex
         {
             if (imaginarni < 0)
             {
-                return (realna + "-" + imaginarni + "i");
+                return (Realna + "-" + imaginarni + "i");
             }else
             {
-                return (realna + "+" + imaginarni + "i");
+                return (Realna + "+" + imaginarni + "i");
             }
         }
 
         public static Complex ComplexConjugate(Complex x)
         {
-            return new Complex(x.realna - x.imaginarni);
+            return new Complex(x.Realna - x.imaginarni);
         }
 
         public static Complex Module(Complex x)
         {
-            return new Complex(Math.Sqrt(x.realna * x.realna) + (x.imaginarni * x.imaginarni));
+            return new Complex(Math.Sqrt(x.Realna * x.Realna) + (x.imaginarni * x.imaginarni));
         }
 
-        public static Complex Argument(Complex x)
+        public double Argument(Complex x)
         {
-            return new Complex(Math.Atan2(x.imaginarni, x.realna));
+            return (Math.Atan2(x.imaginarni, x.Realna));
+            //return new Complex(Math.Atan2(x.imaginarni, x.realna));
         }
        
     }
