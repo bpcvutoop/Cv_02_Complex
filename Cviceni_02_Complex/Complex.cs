@@ -10,7 +10,6 @@ namespace Cviceni_02_Complex
     {
         double realna;
         double imaginarni;
-        double sranda = 0.0;
 
         public Complex(double real = 0.0, double complex = 0.0)
         {
