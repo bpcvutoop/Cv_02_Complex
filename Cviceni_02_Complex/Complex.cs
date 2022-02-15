@@ -71,10 +71,20 @@ namespace Cviceni_02_Complex
             }
         }
 
-        public void ToString(double real, double complex)
+        public static Complex ComplexConjugate(Complex x)
         {
-            Console.WriteLine(real + complex + "i");
+            return new Complex(x.realna - x.imaginarni);
         }
 
+        public static Complex Module(Complex x)
+        {
+            return new Complex(Math.Sqrt(x.realna * x.realna) + (x.imaginarni * x.imaginarni));
+        }
+
+        public static Complex Argument(Complex x)
+        {
+            return new Complex(Math.Atan2(x.imaginarni, x.realna));
+        }
+       
     }
 }
