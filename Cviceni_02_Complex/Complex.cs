@@ -11,6 +11,9 @@ namespace Cviceni_02_Complex
         double realna;
         double imaginarni;
 
+        double sranda = 0.0;
+
+
         public Complex(double real = 0.0, double complex = 0.0)
         {
             this.realna = real;
@@ -39,10 +42,33 @@ namespace Cviceni_02_Complex
             //                      (x1y1 - x2y2) + (x1y2 + x2y1)i
             return new Complex(((x.realna * x.realna + x.imaginarni * y.imaginarni) / (y.realna * y.realna + y.imaginarni * y.imaginarni)), (x.imaginarni * x.realna - x.realna * y.imaginarni) / (y.realna * y.realna + y.imaginarni * y.imaginarni));
         }
-        public static Complex operator -(Complex x, Complex y)
-        { //(ac - bd) + (ad + bc)i
-            //                      (x1y1 - x2y2) + (x1y2 + x2y1)i
-            return new Complex(((x.realna * x.realna + x.imaginarni * y.imaginarni) / (y.realna * y.realna + y.imaginarni * y.imaginarni)), (x.imaginarni * x.realna - x.realna * y.imaginarni) / (y.realna * y.realna + y.imaginarni * y.imaginarni));
+        
+        public static bool operator ==(Complex x, Complex y)
+        {
+            if ((x.realna == y.realna) && (x.imaginarni == y.imaginarni))
+            {
+                return true;
+            }
+            else return false;
+        }
+        public static bool operator !=(Complex x, Complex y)
+        {
+            if ((x.realna != y.realna) || (x.imaginarni != y.imaginarni))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public override string ToString()
+        {
+            if (imaginarni < 0)
+            {
+                return (realna + "-" + imaginarni + "i");
+            }else
+            {
+                return (realna + "+" + imaginarni + "i");
+            }
         }
 
         public void ToString(double real, double complex)
